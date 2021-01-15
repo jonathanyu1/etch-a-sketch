@@ -1,0 +1,1 @@
+This project aims to create an 'etch-a-sketch' page which allows a user to draw on a specified grid size, with options to resize the grid and change colours.
