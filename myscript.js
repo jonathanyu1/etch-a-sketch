@@ -1,22 +1,45 @@
 const gridContainer=document.querySelector('.gridContainer');
+let cell=[]
 let cellColor = 'black';
+let trailStatus = 'false';
+
+gridContainer.addEventListener('click', () =>{
+    toggleTrail();
+});
+
+function toggleTrail(){
+    // if trail is on, turn off for all cells
+    if (trailStatus=='true'){
+        trailStatus='false';
+        cell.forEach(item=>{
+            item.removeEventListener('mouseover', enableTrail);
+        });
+    }
+    // if trail is off, turn on for all cells
+    else if (trailStatus=='false'){
+        trailStatus='true';
+        cell.forEach(item=>{
+            item.addEventListener('click', enableTrail);
+            item.addEventListener('mouseover', enableTrail);
+        });
+    }
+}
+
+
+// enables and sets trail to specified cell color
+function enableTrail(e){
+    e.target.style.backgroundColor=`${cellColor}`;
+}
 
 function setGrid(size){
     // empties cells
     removeCells();
-    for (i=0;i<size;i++){
-        for (j=0;j<size;j++){
-            const cell=document.createElement('div');
-            cell.classList.add('cell');
-            gridContainer.appendChild(cell);
-            cell.style.minWidth=(`40/${size}`);
-            cell.style.minHeight=(`40/${size}`);
-            // figure out how to trigger trail on click
-            // cell.addEventListener('click', () => {
-            cell.addEventListener('mouseover',()=>{
-                cell.style.backgroundColor= `${cellColor}`;
-            });
-        }
+    for (i=0;i<size*size;i++){
+            cell[i]=document.createElement('div');
+            cell[i].classList.add('cell');
+            gridContainer.appendChild(cell[i]);
+            cell[i].style.minWidth=(`40/${size}`);
+            cell[i].style.minHeight=(`40/${size}`);
     }
     setGridDimensions(size);
 }
@@ -34,5 +57,4 @@ function removeCells(){
 
 // starter grid
 setGrid(16);
-
 
