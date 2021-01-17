@@ -8,6 +8,18 @@ gridContainer.addEventListener('click', () =>{
     toggleTrail();
 });
 
+// set slider value and output 
+const slider=document.getElementById('slider');
+let sliderValue=document.getElementById('sliderValue');
+sliderValue.innerHTML = slider.value;
+slider.addEventListener('change', ()=> {
+    setGrid(slider.value);
+});
+slider.addEventListener('input', ()=> {
+    sliderValue.innerHTML=slider.value;
+});
+
+
 const btns = document.querySelectorAll('.btn');
 btns.forEach((btn)=> {
     btn.addEventListener('click', function (e){
