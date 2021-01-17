@@ -2,10 +2,35 @@ const gridContainer=document.querySelector('.gridContainer');
 let cell=[]
 let cellColor = 'black';
 let trailStatus = 'false';
+let gridSize=16;
 
 gridContainer.addEventListener('click', () =>{
     toggleTrail();
 });
+
+const btns = document.querySelectorAll('.btn');
+btns.forEach((btn)=> {
+    btn.addEventListener('click', function (e){
+        console.log(e.target.id);
+        console.log(typeof(e.target.id));
+        switch(e.target.id){
+            case 'clear':
+                setGrid(gridSize);
+                break;
+            case 'eraser':
+                cellColor='white';
+                break;
+            case 'color':
+                btn.addEventListener('input',updateColor,false);
+                btn.addEventListener('change',updateColor,false);
+        }
+    });
+    
+});
+
+function updateColor(e){
+    cellColor=e.target.value;
+}
 
 function toggleTrail(){
     // if trail is on, turn off for all cells
@@ -19,7 +44,7 @@ function toggleTrail(){
     else if (trailStatus=='false'){
         trailStatus='true';
         cell.forEach(item=>{
-            item.addEventListener('click', enableTrail);
+            //item.addEventListener('click', enableTrail);
             item.addEventListener('mouseover', enableTrail);
         });
     }
@@ -40,8 +65,11 @@ function setGrid(size){
             gridContainer.appendChild(cell[i]);
             cell[i].style.minWidth=(`40/${size}`);
             cell[i].style.minHeight=(`40/${size}`);
+            // ensures first square clicked is colored in
+            cell[i].addEventListener('click', enableTrail);
     }
     setGridDimensions(size);
+    gridSize=size;
 }
 
 function setGridDimensions(size){
