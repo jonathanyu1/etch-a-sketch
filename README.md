@@ -1,5 +1,7 @@
 This project aims to create an 'etch-a-sketch' page which allows a user to draw on a specified grid size, with options to resize the grid and change colours.
 
+Preview of the project: https://jonathanyu1.github.io/etch-a-sketch/
+
 What I Learned:
 
   -my first 'real' javascript project
@@ -10,4 +12,4 @@ What I Learned:
   
   -creating, deleting, manipulating nodes and child nodes
 
-  -
+  
