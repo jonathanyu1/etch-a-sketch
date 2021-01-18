@@ -7,17 +7,19 @@
     <link rel='stylesheet' href='styles.css'>
 </head>
 <body class='bodyContainer'>
+    <h1 class='title'>Etch-A-Sketch</h1>
+
     <div class='gridContainer'></div>
     
-    <div class='btnContainer'>
-        <input type ='range' min='1' max='100' value='16' class='slider' id='slider'>
-        <label><span id="sliderValue"></span></label>
-        <button class='btn' id='clear'>Clear</button>
-        <button class='btn' id='eraser'>Eraser</button>
-        <input class='btn' id='color' type='color' value ='#000000'></button>
-    </div>
-
-
+    <ul class='btnList' style='list-style-type:none'><div class='btnContainer'>
+        <div class='sliderContainer'>
+            <li><input type ='range' min='1' max='100' value='16' class='slider' id='slider'></li>
+            <li><label><span id="sliderValue"></span></label></li>
+        </div>
+        <li></li><button class='btn' id='clear'>Clear</button></li>
+        <li></li><button class='btn' id='eraser'>Eraser</button></li>
+        <li></li><input class='btn' id='color' type='color' value ='#000000'></button></li>
+    </div></ul>
 
     <script type='text/javascript' src='myscript.js'></script>
 </body>

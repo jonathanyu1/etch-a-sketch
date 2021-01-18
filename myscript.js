@@ -23,8 +23,6 @@ slider.addEventListener('input', ()=> {
 const btns = document.querySelectorAll('.btn');
 btns.forEach((btn)=> {
     btn.addEventListener('click', function (e){
-        console.log(e.target.id);
-        console.log(typeof(e.target.id));
         switch(e.target.id){
             case 'clear':
                 setGrid(gridSize);
@@ -75,8 +73,8 @@ function setGrid(size){
             cell[i]=document.createElement('div');
             cell[i].classList.add('cell');
             gridContainer.appendChild(cell[i]);
-            cell[i].style.minWidth=(`40/${size}`);
-            cell[i].style.minHeight=(`40/${size}`);
+            cell[i].style.minWidth=(`35/${size}`);
+            cell[i].style.minHeight=(`35/${size}`);
             // ensures first square clicked is colored in
             cell[i].addEventListener('click', enableTrail);
     }

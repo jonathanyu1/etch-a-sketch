@@ -3,16 +3,77 @@ html, body{
     height: 100%;
 }
 
+.bodyContainer{
+    font-family: monospace;
+    display: grid;
+    grid-template-columns: 60% auto;
+    grid-template-rows: 150px auto;
+    grid-template-areas:'header header'
+                        'gridArea buttons';
+    justify-items: center;
+    background-color: pink;
+}
+
+.title{
+    grid-area: header;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-decoration: underline;
+    font-size: 60px;
+    margin-bottom: 60px;
+}
+
 .gridContainer {
     display: grid;
-    height: 40vw;
-    width: 40vw;
+    grid-area: gridArea;
+    height: 35vw;
+    width: 35vw;
     grid-template-columns: repeat(16,1fr);
     grid-template-rows: repeat(16,1fr);
+    background-color: white;
+    
 }
 
 .cell {
     border: 1px solid rgba(128,128,128,0.3);
-    min-width: (40/16)vw;
-    min-height: (40/16)vw;
+    min-width: (35/16)vw;
+    min-height: (35/16)vw;
+}
+
+ul{
+    list-style:none;
+    padding-left: 0;
+}
+
+.btnContainer {
+    grid-area: buttons;
+}
+
+.btnList{
+    width:100%;
+}
+
+.btn{
+    background-color: #add8e6;
+    border: none;
+    text-align: center;
+    display: inline-block;
+    padding: 40px 80px;
+    margin: 40px;
+    font-size: 25px;
+    font-family: monospace;
+}
+
+.sliderContainer{
+    margin: 50px;
+    font-size: 25px;
+    font-family: monospace;
+    
+}
+
+#slider{
+    width: 35%;
+    height: 100%;
 }
