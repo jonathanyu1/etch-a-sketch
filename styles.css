@@ -4,7 +4,6 @@ html, body{
 }
 
 .bodyContainer{
-    font-family: monospace;
     display: grid;
     grid-template-columns: 60% auto;
     grid-template-rows: 150px auto;
@@ -22,6 +21,7 @@ html, body{
     align-items: center;
     text-decoration: underline;
     font-size: 60px;
+    font-family: 'Pacifico', cursive;
     margin-bottom: 60px;
 }
 
@@ -62,14 +62,14 @@ ul{
     display: inline-block;
     padding: 40px 80px;
     margin: 40px;
-    font-size: 25px;
-    font-family: monospace;
+    font-size: 35px;
+    font-family: 'Pacifico', cursive;
 }
 
 .sliderContainer{
     margin: 50px;
-    font-size: 25px;
-    font-family: monospace;
+    font-size: 35px;
+    font-family: 'Pacifico', cursive;
     
 }
 
