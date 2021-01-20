@@ -20,7 +20,6 @@ slider.addEventListener('input', ()=> {
     sliderValue.innerHTML=slider.value;
 });
 
-
 const btns = document.querySelectorAll('.btn');
 btns.forEach((btn)=> {
     btn.addEventListener('click', function (e){
@@ -107,4 +106,3 @@ function removeCells(){
 
 // starter grid
 setGrid(16);
-
