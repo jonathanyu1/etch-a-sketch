@@ -1,6 +1,7 @@
 const gridContainer=document.querySelector('.gridContainer');
 let cell=[]
 let cellColor = 'black';
+let tempCellColor = cellColor;
 let trailStatus = 'false';
 let gridSize=16;
 
@@ -28,7 +29,7 @@ btns.forEach((btn)=> {
                 setGrid(gridSize);
                 break;
             case 'eraser':
-                cellColor='white';
+                eraserFunction();
                 break;
             case 'color':
                 btn.addEventListener('input',updateColor,false);
@@ -38,8 +39,19 @@ btns.forEach((btn)=> {
     
 });
 
+function eraserFunction(e){
+    let eraser=document.getElementById('eraser');
+    eraser.classList.toggle('buttonHighlight');
+    if (eraser.classList.contains('buttonHighlight')){
+        cellColor='white';
+    } else {
+        cellColor=tempCellColor;
+    }
+}
+
 function updateColor(e){
     cellColor=e.target.value;
+    tempCellColor=cellColor;
 }
 
 function toggleTrail(){
@@ -73,8 +85,8 @@ function setGrid(size){
             cell[i]=document.createElement('div');
             cell[i].classList.add('cell');
             gridContainer.appendChild(cell[i]);
-            cell[i].style.minWidth=(`35/${size}`);
-            cell[i].style.minHeight=(`35/${size}`);
+            cell[i].style.minWidth=(`25/${size}`);
+            cell[i].style.minHeight=(`25/${size}`);
             // ensures first square clicked is colored in
             cell[i].addEventListener('click', enableTrail);
     }

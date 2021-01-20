@@ -5,10 +5,12 @@ html, body{
 
 .bodyContainer{
     display: grid;
-    grid-template-columns: 60% auto;
+    grid-template-columns: auto;
     grid-template-rows: 150px auto;
-    grid-template-areas:'header header'
-                        'gridArea buttons';
+    grid-template-areas:'header'
+                        'gridArea'
+                        'slider'
+                        'buttons';
     justify-items: center;
     background-color: pink;
 }
@@ -28,31 +30,21 @@ html, body{
 .gridContainer {
     display: grid;
     grid-area: gridArea;
-    height: 35vw;
-    width: 35vw;
+    height: 25vw;
+    width: 25vw;
     grid-template-columns: repeat(16,1fr);
     grid-template-rows: repeat(16,1fr);
     background-color: white;
-    
 }
 
 .cell {
     border: 1px solid rgba(128,128,128,0.3);
-    min-width: (35/16)vw;
-    min-height: (35/16)vw;
-}
-
-ul{
-    list-style:none;
-    padding-left: 0;
-}
+    min-width: (25/16)vw;
+    min-height: (25/16)vw;
+}   
 
 .btnContainer {
     grid-area: buttons;
-}
-
-.btnList{
-    width:100%;
 }
 
 .btn{
@@ -67,13 +59,21 @@ ul{
 }
 
 .sliderContainer{
-    margin: 50px;
     font-size: 35px;
     font-family: 'Pacifico', cursive;
-    
+    grid-area: 'slider';
+    text-align: center;
+    width: 100%;
 }
 
-#slider{
+.slider{
     width: 35%;
-    height: 100%;
+}
+
+.buttonHighlight{
+    background-color:#000080;
+}
+
+#color{
+    padding: 67px 105px 50px;
 }
